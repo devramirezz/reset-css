@@ -1,0 +1,130 @@
+:root{
+    --color-primario : #181818;
+    --color-secundario : #f0f0f0;
+
+/* Tipografía */
+    --tipo-principal : Helvetica, Arial, sans-serif;
+    --tipo-secundaria : Verdana;
+}
+
+/*Adaptacion modo oscuro*/
+@media (prefers-color-scheme: dark) {
+    :root{
+        --color-primario : #f0f0f0;
+        --color-secundario : #181818;
+    }
+}
+
+/*opcionales*/
+/*Modo contrastes*/
+@media (prefers-contrast: high) {
+    :root{
+        --color-primario : black;
+        --color-secundario : white;
+    }
+}
+
+/*opcionales*/
+/*Desactivar animaciones*/
+@media (prefers-reduced-motion: reduce) {
+    *{
+        animation: none;
+        transition: none;
+    }
+}
+
+/*Reset margin y padding en todas las etiquetas*/
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+}
+
+/*Problemas con imagenes*/
+img, picture, video, iframe, figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+
+    /*opcional*/object-fit: cover;
+    /*opcional*/object-position: center  center;
+}
+
+/*Reset enlaces para funcionar en cajas de texto*/
+a{
+    display: block;
+}
+
+/*... excepo en párrafos*/
+p a{
+    display: inline;
+}
+
+/*Quitarmos puntos de los <li>*/
+li{
+    list-style: none;
+}
+
+/*Configuración anclas suave*/
+html{
+    scroll-behavior: smooth;
+}
+
+/*Desactivar estilos por defecto, etiquetas de texto*/
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em{
+    font-size: 1em;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Evitamos problemas con los pseudo-elementos*/
+blockquote:before, blockquote:after, q:before, q:after{
+    content: ' ';
+    content: none;
+}
+/*Configurar texto que seleccionamos*/
+::selection{
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+/*Nivelamos problemas de tipografia y colocacion de formularios*/
+form, input, textarea, select, button, label{
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    display: block;
+    color: inherit;
+}
+
+/*Reset tablas*/
+table, tr, td{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/*Evitamos problemas con svg*/
+svg{
+    width: 100%;
+    display: block;
+    fill: currentColor;
+}
+
+/*configuramos tipografia para todas WEB*/
+body{
+    min-height: 100vh;
+    font-size: 100%;
+    font-family: var(--tipo-principal);
+    color: var(--color-primario);
+    background-color: var(--color-secundario);
+
+    /**/line-height: 1.4em;
+    /**/font-smooth: always;
+    /**/-webkit-font-smoothing: antialiased;
+    /**/-moz-osx-font-smoothing: grayscale;
+}
